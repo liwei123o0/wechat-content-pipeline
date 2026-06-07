@@ -42,7 +42,7 @@ def main():
             merged.append(item)
     
     # 5. 保存为素材文件
-    素材_dir = BASE_DIR / "素材"
+    素材_dir = BASE_DIR / "data" / "素材"
     素材_dir.mkdir(parents=True, exist_ok=True)
     
     output = {

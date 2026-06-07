@@ -217,7 +217,7 @@ def main():
         except Exception as e:
             print(f"   ⚠️ 记录失败: {e}")
 
-        output_dir = Path(__file__).parent / "output"
+        output_dir = Path(__file__).parent / "data" / "output"
         output_dir.mkdir(exist_ok=True)
         shutil.copy2(md_file, output_dir / md_file.name)
 

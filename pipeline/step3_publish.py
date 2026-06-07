@@ -16,7 +16,7 @@ def get_access_token():
         return json.loads(r.read().decode("utf-8"))["access_token"]
 
 创作_dir = Path(__file__).parent / "data" / "创作"
-output_dir = Path(__file__).parent / "output"
+output_dir = Path(__file__).parent / "data" / "output"
 today = "20260524"
 articles = sorted(创作_dir.glob(f"文章_*{today}.md"))
 

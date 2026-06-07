@@ -9,7 +9,7 @@ from pathlib import Path
 from datetime import datetime
 
 BASE_DIR = Path(__file__).parent
-素材_DIR = BASE_DIR / "素材"
+素材_DIR = BASE_DIR / "data" / "素材"
 
 
 # ═══════════════════════════════

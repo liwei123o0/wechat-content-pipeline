@@ -232,7 +232,7 @@ def update_frontmatter(content, cover_media_id, body_urls):
 def scan_and_generate(创作_dir=None, today_only=False, pro=False):
     """扫描创作/目录，为所有未生成封面的文章生成封面"""
     if 创作_dir is None:
-        创作_dir = BASE_DIR / "创作"
+        创作_dir = BASE_DIR / "data" / "创作"
     else:
         创作_dir = Path(创作_dir)
 

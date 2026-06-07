@@ -214,7 +214,7 @@ if __name__ == '__main__':
     output_dir = sys.argv[2] if len(sys.argv) > 2 else '值得顶'
 
     if not md_path:
-        创作_dir = Path(__file__).parent / '创作'
+        创作_dir = Path(__file__).parent / 'data' / '创作'
         files = sorted(创作_dir.glob('文章_*.md'), key=lambda p: p.stat().st_mtime, reverse=True)
         md_path = str(files[0]) if files else None
 

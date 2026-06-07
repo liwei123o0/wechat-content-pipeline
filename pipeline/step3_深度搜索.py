@@ -119,7 +119,7 @@ def 生成搜索任务(热度排行: list, top_n: int = 3) -> list:
 # ============================================================
 def 读取搜索结果() -> list:
     """读取已保存的搜索结果"""
-    结果_path = CURRENT_DIR / "素材" / "search_results.json"
+    结果_path = CURRENT_DIR / "data" / "素材" / "search_results.json"
     if not 结果_path.exists():
         return []
     with open(结果_path, encoding='utf-8') as f:
@@ -137,7 +137,7 @@ def 汇总深度素材() -> str:
     读取搜索任务 + 搜索结果，汇总为深度素材文件
     返回保存的文件名（路径）
     """
-    素材_dir = CURRENT_DIR / "素材"
+    素材_dir = CURRENT_DIR / "data" / "素材"
     素材_dir.mkdir(exist_ok=True)
 
     # 读取最新搜索任务
@@ -251,7 +251,7 @@ def 输出搜索指令(任务列表: list):
 # 保存搜索任务（供agent/consolidate使用）
 # ============================================================
 def 保存搜索任务(任务列表: list):
-    素材_dir = CURRENT_DIR / "素材"
+    素材_dir = CURRENT_DIR / "data" / "素材"
     素材_dir.mkdir(exist_ok=True)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     task_file = 素材_dir / f"搜索任务_{timestamp}.json"
@@ -268,7 +268,7 @@ def 保存搜索任务(任务列表: list):
 # ============================================================
 def 保存搜索结果(结果列表: list):
     """追加搜索结果到search_results.json"""
-    结果_path = CURRENT_DIR / "素材" / "search_results.json"
+    结果_path = CURRENT_DIR / "data" / "素材" / "search_results.json"
     
     # 读取现有结果
     现有结果 = 读取搜索结果()
@@ -281,7 +281,7 @@ def 保存搜索结果(结果列表: list):
             现有结果.append(r)
             seen.add(key)
     
-    (CURRENT_DIR / "素材").mkdir(exist_ok=True)
+    (CURRENT_DIR / "data" / "素材").mkdir(exist_ok=True)
     with open(结果_path, 'w', encoding='utf-8') as f:
         json.dump(现有结果, f, ensure_ascii=False, indent=2)
     print(f"💾 搜索结果已保存到 search_results.json（共 {len(现有结果)} 条）")

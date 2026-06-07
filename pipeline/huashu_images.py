@@ -8,7 +8,7 @@ from pathlib import Path
 from datetime import datetime
 
 BASE_DIR = Path(__file__).parent
-IMG_DIR = BASE_DIR / "素材"
+IMG_DIR = BASE_DIR / "data" / "素材"
 
 # ===== 配色方案 =====
 STYLES = {

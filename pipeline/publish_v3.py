@@ -506,7 +506,7 @@ def main():
         "文章_TradingAgents多智能体交易.md",
     ]
 
-    创作_dir = BASE_DIR / "创作"
+    创作_dir = BASE_DIR / "data" / "创作"
     md_files = []
     for name in new_articles:
         p = 创作_dir / name
@@ -578,7 +578,7 @@ def main():
             except Exception as e:
                 print(f"   ⚠️ 记录发布历史失败: {e}")
             published.append((title, resp["media_id"]))
-            dest = BASE_DIR / "output" / md_path.name
+            dest = BASE_DIR / "data" / "output" / md_path.name
             import shutil
             shutil.copy2(md_path, dest)
             md_path.unlink()
