@@ -6,7 +6,7 @@ Agent 消息系统 —— 用于独立 Agent 之间的异步通信
 import json, os, time, uuid
 from pathlib import Path
 
-BASE = Path(__file__).parent / "agent_mailbox"
+BASE = Path(__file__).parent / "data" / "agent_mailbox"
 BASE.mkdir(parents=True, exist_ok=True)
 
 def _normalize_role(role: str) -> str:

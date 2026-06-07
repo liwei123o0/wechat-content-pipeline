@@ -195,7 +195,7 @@ def main():
     print("=" * 60)
 
     # ── 读取采集数据 ──
-    采集_dir = Path(__file__).parent / "采集"
+    采集_dir = Path(__file__).parent / "data" / "采集"
     files = list(采集_dir.glob("AI科技_汇总_*.json"))
     if not files:
         print("⚠️ 未找到 AI 科技采集数据，请先运行 step1a_采集_AI科技.py")
@@ -395,7 +395,7 @@ def main():
         "分类统计": {k: len(v) for k, v in stats.items()},
     }
 
-    output_dir = Path(__file__).parent / "整理"
+    output_dir = Path(__file__).parent / "data" / "整理"
     output_dir.mkdir(exist_ok=True)
     timestamp = now.strftime("%Y%m%d_%H%M%S")
     output_file = output_dir / f"选题_AI科技_{timestamp}.json"

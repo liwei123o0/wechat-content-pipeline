@@ -115,7 +115,7 @@ def create_draft(title, author, html_content, thumb_media_id, digest=""):
 
 
 def 获取文件名(栏目slug=None):
-    创作_dir = Path(__file__).parent / "创作"
+    创作_dir = Path(__file__).parent / "data" / "创作"
     if 栏目slug:
         md_files = list(创作_dir.glob(f"文章_{栏目slug}_*.md"))
     if not md_files:

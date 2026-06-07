@@ -149,7 +149,7 @@ def 插入正文配图(正文, access_token, 文章标题):
         return publish.markdown_to_html(正文)
 
 def 读取最新选题():
-    整理_dir = Path(__file__).parent / "整理"
+    整理_dir = Path(__file__).parent / "data" / "整理"
     files = sorted(整理_dir.glob("选题_*.json"), reverse=True)
     if not files: return None
     with open(files[0], encoding='utf-8') as f:
@@ -158,7 +158,7 @@ def 读取最新选题():
     return data.get('综合推荐', [])[:3]
 
 def 检查文章是否已生成(选题标题):
-    创作_dir = Path(__file__).parent / "创作"
+    创作_dir = Path(__file__).parent / "data" / "创作"
     清理 = 选题标题.replace("8点1氪丨", "").replace("36氪首发", "")
     关键词列表 = [清理[:4], 清理.split("，")[0][:6], 清理.split("；")[0][:6]]
     for 特殊词 in ["小米", "宇树", "可灵", "贝壳", "Qwen", "千问", "大模型", "AI", "Token", "机甲", "数字员工", "客服"]:

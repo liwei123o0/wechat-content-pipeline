@@ -251,7 +251,7 @@ def main(栏目slug=None):
         print(f"🚫 内容过滤: {过滤前} → {len(unique)} 条 (过滤 {过滤前 - len(unique)} 条低质量内容)")
 
     # 保存
-    output_dir = Path(__file__).parent / "采集"
+    output_dir = Path(__file__).parent / "data" / "采集"
     output_dir.mkdir(exist_ok=True)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 

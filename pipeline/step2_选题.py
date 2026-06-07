@@ -55,7 +55,7 @@ COLUMN_KEYWORDS = {
 # ==================== 核心逻辑 ====================
 
 def 读取采集数据():
-    采集_dir = Path(__file__).parent / "采集"
+    采集_dir = Path(__file__).parent / "data" / "采集"
     files = list(采集_dir.glob("汇总_*.json"))
     if not files:
         print("⚠️ 未找到采集数据")
@@ -69,7 +69,7 @@ def 读取采集数据():
 
 def 读取aihot数据():
     """读取AI HOT素材数据，字段归一化后与采集数据合并评分"""
-    素材_dir = Path(__file__).parent / "素材"
+    素材_dir = Path(__file__).parent / "data" / "素材"
     files = list(素材_dir.glob("aihot_素材_*.json"))
     if not files:
         print("📭 AI HOT: 无素材数据")
@@ -259,7 +259,7 @@ def main(栏目slug=None):
         print(f"  {name}: {count}条 {bar}")
 
     # 保存选题结果
-    output_dir = Path(__file__).parent / "整理"
+    output_dir = Path(__file__).parent / "data" / "整理"
     output_dir.mkdir(exist_ok=True)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 

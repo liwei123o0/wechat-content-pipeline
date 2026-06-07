@@ -1,18 +1,5 @@
 # 运行时数据（不跟踪）
-采集/
-素材/
-整理/
-创作/
-发布/
-输出/
-爆款文案库/
-值得顶/
-agent_mailbox/
-选题/
-配置/
-文章/
-重写_对比/
-drafts/
+pipeline/data/
 
 # Python
 __pycache__/

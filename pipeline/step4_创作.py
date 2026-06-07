@@ -13,7 +13,7 @@ from column_config import get_column, COLUMNS, CI_STYLE
 
 
 def 读取素材():
-    素材_dir = Path(__file__).parent / "素材"
+    素材_dir = Path(__file__).parent / "data" / "素材"
     files = list(素材_dir.glob("深度素材_*.json"))
     if not files:
         return None
@@ -23,7 +23,7 @@ def 读取素材():
 
 
 def 读取选题(栏目slug=None):
-    整理_dir = Path(__file__).parent / "整理"
+    整理_dir = Path(__file__).parent / "data" / "整理"
     if 栏目slug:
         files = list(整理_dir.glob(f"选题_{栏目slug}_*.json"))
     if not files:
@@ -88,7 +88,7 @@ def main(栏目slug=None):
         "素材": material,
         "生成时间": datetime.now().isoformat(),
     }
-    task_path = Path(__file__).parent / "素材" / f"写作任务_{栏目slug}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+    task_path = Path(__file__).parent / "data" / "素材" / f"写作任务_{栏目slug}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
     with open(task_path, 'w', encoding='utf-8') as f:
         json.dump(task, f, ensure_ascii=False, indent=2)
 

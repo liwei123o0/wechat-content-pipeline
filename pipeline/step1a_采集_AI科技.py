@@ -320,7 +320,7 @@ def 去重合并(news_list):
 # ==================== 保存数据 ====================
 def 保存数据(news_list, source):
     """保存采集数据"""
-    output_dir = Path(__file__).parent / "采集"
+    output_dir = Path(__file__).parent / "data" / "采集"
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     filename = output_dir / f"AI科技_{source}_{timestamp}.json"
 
@@ -340,7 +340,7 @@ def main():
     print("🤖 Step 1A: AI/科技新闻深度采集 (8个渠道)")
     print("=" * 60)
 
-    output_dir = Path(__file__).parent / "采集"
+    output_dir = Path(__file__).parent / "data" / "采集"
     output_dir.mkdir(exist_ok=True)
 
     all_news = []

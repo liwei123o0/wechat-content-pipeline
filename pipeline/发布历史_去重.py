@@ -15,7 +15,7 @@ from pathlib import Path
 from collections import Counter
 
 CST = timezone(timedelta(hours=8))
-HISTORY_FILE = Path(__file__).parent / "发布" / "发布历史.json"
+HISTORY_FILE = Path(__file__).parent / "data" / "发布" / "发布历史.json"
 
 STOP_WORDS = {
     "的", "了", "在", "是", "我", "有", "和", "就", "不", "人", "都", "一",
