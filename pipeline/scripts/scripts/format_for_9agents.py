@@ -1,12 +1,16 @@
 #!/usr/bin/env python3
 """Format the 9-Agent article with frontier-news style, insert body images."""
 import sys, re
-sys.path.insert(0, '/home/lw/wechat_publisher')
+from pathlib import Path
+
+BASE = Path(__file__).parent.parent
+sys.path.insert(0, str(BASE))
 
 from design_layout import format_article
 
-article_path = "/home/lw/wechat_publisher/创作/article_hermes_pipeline_20260605.md"
-output_path = "/home/lw/wechat_publisher/创作/article_hermes_pipeline_20260605.html"
+DATA = BASE / "data" / "创作"
+article_path = str(DATA / "article_hermes_pipeline_20260605.md")
+output_path = str(DATA / "article_hermes_pipeline_20260605.html")
 
 with open(article_path, encoding="utf-8") as f:
     md_text = f.read()

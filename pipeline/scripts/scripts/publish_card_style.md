@@ -76,7 +76,7 @@ H2小标题:        17px 粗体
 使用 `scripts/publish_card_style.py` 脚本：
 
 ```bash
-cd /home/lw/wechat_publisher
+cd /home/lw/wechat-content-pipeline/pipeline
 python scripts/publish_card_style.py 创作/文章_xxx.md --account old
 ```
 

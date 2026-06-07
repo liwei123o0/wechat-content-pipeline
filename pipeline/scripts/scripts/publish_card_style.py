@@ -4,8 +4,8 @@ Publish an article using the "knowledge card" style (光音谷 piano style).
 Reads markdown from 创作/, converts to card-style HTML, publishes to WeChat draft.
 
 Usage:
-    cd /home/lw/wechat_publisher
-    python scripts/publish_card_style.py 创作/文章_xxx.md --account old
+    cd /home/lw/wechat-content-pipeline/pipeline
+    python scripts/scripts/publish_card_style.py data/创作/文章_xxx.md --account old
 """
 import json, os, re, sys, time, io, urllib.request, urllib.error
 from pathlib import Path

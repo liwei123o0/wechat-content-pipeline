@@ -3,11 +3,13 @@
 import sys, re
 from pathlib import Path
 
-sys.path.insert(0, '/home/lw/wechat_publisher')
+BASE = Path(__file__).parent.parent
+sys.path.insert(0, str(BASE))
 from agent_comm import send
 
-article_path = "/home/lw/wechat_publisher/创作/article_hermes_pipeline_20260605.md"
-html_path = "/home/lw/wechat_publisher/创作/article_hermes_pipeline_20260605.html"
+DATA = BASE / "data" / "创作"
+article_path = str(DATA / "article_hermes_pipeline_20260605.md")
+html_path = str(DATA / "article_hermes_pipeline_20260605.html")
 content = Path(article_path).read_text(encoding="utf-8")
 
 # Extract cover_media_id and body URLs
