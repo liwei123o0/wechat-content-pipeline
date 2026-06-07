@@ -5,8 +5,3 @@ pipeline/data/
 __pycache__/
 *.pyc
 .DS_Store
-
-# 迁移残留空目录
-pipeline/output/
-pipeline/值得顶/
-pipeline/素材/
